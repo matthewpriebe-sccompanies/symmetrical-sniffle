@@ -1,6 +1,6 @@
 site_name: Credit Team Docs
 theme:
-  logo: assets/logo.png
+  logo: Assets/logo.png
   name: material
   features:
     - announce.dismiss
