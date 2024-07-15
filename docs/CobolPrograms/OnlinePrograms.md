@@ -1,6 +1,6 @@
 # Online Programs
 
-## COL335
+## **COL335**
 
 ### Description
 This program is designed to accept bank card payments online.
@@ -31,7 +31,7 @@ and scores.EXPERIAN_SCORE > '0' and scores.EQUIFAX_SCORE_04 > '0' and scores.CRE
 
 ---
 
-## COL337
+## **COL337**
 
 ### Description
 This program is designed to accept ACH payments on Maggies. It is part of the COP - Catalog Order Processing system. The program accepts ACH bank information to allow a down payment on a credit held order (Maggie). For the initial start up of this application, only credit down payments under $200 are allowed. $200 and over are verified with the bank, and therefore excluded from this process. This program was copied from program COL335, which accepts bank card payments. ACH payments on A/R plans are also accepted. The process is similar to COL335. The ACH transaction is written to a VSAM file for batch processing via the A/R system. A 'BA' comment is written to the CORRSP file for batch process in the MOP system (COP471). COP471 applies the remittance to the order, and sets the appropriate tracking code on the AUTH record. This program does allow for same day deletes.
