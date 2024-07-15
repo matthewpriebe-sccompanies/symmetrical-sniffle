@@ -1,5 +1,6 @@
-site_name: MkDocs YouTube Tutorial
+site_name: Credit Team Docs
 theme:
+  logo: assets/logo.png
   name: material
   features:
     - announce.dismiss
