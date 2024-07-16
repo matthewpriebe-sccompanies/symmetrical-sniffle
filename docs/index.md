@@ -1,4 +1,4 @@
-# Welcome to the Credit Team
+# Welcome to the Credit Team Docs
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
