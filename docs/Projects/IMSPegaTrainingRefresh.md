@@ -2,11 +2,11 @@
 
 ## Overview
 
-This project copies production data from Redshift over to the MySQL training environment. The purpose is to provide phone agents and operators with a consistent set of real customer data to use for training purposes. The process is automated through a job controlled by AR team.
+This project copies production data from Redshift over to the MySQL training environment. The purpose is to provide phone agents and operators with a consistent set of real customer data for training purposes. The process is automated through several automic schedules controlled by the AR team.
 
 The process consists of 5 Glue Jobs.
 
-## Glue Jobs and Tables
+## Glue Jobs, Tables and Resources
 
 |Glue Job | MySqlTables | Redshift |
 |---------|--------|--------|
@@ -16,18 +16,24 @@ The process consists of 5 Glue Jobs.
 |env-CrdTrainingOrderAuthExtract | IMS_AUTH, IMS_ORDER | oframe_prd_s.ims_order, oframe_prd_s.ims_auth |
 |env-CrdTrainingImsCustomerExtract| IMS_CUSTOMER | oframe_prd_s.ims_customer |
 
-
+The 'Gold Copy' MySql tables are preceded with a GC_. The Following are the 'Gold Copy' Tables:
+- GC_IMS_AUTH
+- GC_IMS_CUS_EMAIL
+- GC_IMS_CUSTOMER
+- GC_IMS_MASON_CRN
+- GC_IMS_MASON_PREFERENCES
+- GC_IMS_ORDER
 
 ## Automic Job
 This process is controlled through two Automic schedules:
 
-1.  JOBP.ARTRAIN_LOAD_IMS_GOLDCOPIES: This schedule pulls new and updated production data from the Redshift change-data-capture tables and loads it into the MySQL training "gold copy" tables. It kicks-off the five AWS Glue jobs owned by the Credit team to extract, transform, and load the data.
+1.  `JOBP.ARTRAIN_LOAD_IMS_GOLDCOPIES`: This schedule kicks off the 5 Credit glue jobs. These jobs pull new and updated production data from Redshift change-data-capture tables and loads it into the MySQL training "gold copy" tables.
 
-2.  JOBP.ARTRAIN_IMS_REFRESH: This schedule pushes the data from the MySQL training "gold copy" tables into the main training tables. It runs much more frequently, multiple times per day, to reset the training data. This schedule kicks-off a static load Glue job owned entirely by AR.
+2.  `JOBP.ARTRAIN_IMS_REFRESH`: This schedule kicks-off a static load Glue jobs owned entirely by AR. These jobs copy data from the MySQL training "gold copy" tables into the main training tables. It runs much more frequently, multiple times per day, to reset the training data.
 
-*Note*: The JOBP.ARTRAIN_LOAD_IMS_GOLDCOPIES schedule runs less often, only when new customers need to be added or existing customer data needs to be modified in the training environment.
+*Note*: The `JOBP.ARTRAIN_LOAD_IMS_GOLDCOPIES` schedule runs less often, only when new customers need to be added or existing customer data needs to be modified in the training environment.
 
-*Note*: The Glue Jobs owned by Credit are only run by the first Automic schedule, JOBP.ARTRAIN_LOAD_IMS_GOLDCOPIES. The second Automic Schedule only calls the static load Glue job which is entirely owned by AR.  
+*Note*: The Glue Jobs owned by Credit are only run by the first Automic schedule, `JOBP.ARTRAIN_LOAD_IMS_GOLDCOPIES`. The second Automic Schedule only calls the static load Glue job which is entirely owned by AR.  
 
 ![System Overview](Images/TrainingRefresh1.PNG)
 
@@ -55,7 +61,7 @@ The structure of the customer file is straightforward and might look something l
 
 ## Anonymization
 
-For two of our glue jobs, env-CrdTrainingImsCustomerExtract and env-CrdTrainingImsCusEmailExtract we have to anonymize the names and email addresses of the customers. We do this with the transform step in the job. 
+For two of our glue jobs, `env-CrdTrainingImsCustomerExtract` and `env-CrdTrainingImsCusEmailExtract` we have to anonymize the names and email addresses of the customers. We do this with the transform step in the job. 
 
 The code chooses a new name based on the last four digits of the customer number. Depending on the customer number this gives us apporximently 10,000 different name options.
 
@@ -63,11 +69,11 @@ The code chooses a new name based on the last four digits of the customer number
 
 Two of our AWS Glue jobs, `env-CrdTrainingImsCustomerExtract` and `env-CrdTrainingImsCusEmailExtract`, anonymize sensitive customer data. This is done to protect customer privacy and comply with data protection regulations.
 
-During the data transformation step, the names and email addresses of customers are replaced with anonymized versions. The code chooses a new name based on the last four digits of the customer number.
+During the data transform step, the names and email addresses of customers are replaced with anonymized versions. The code chooses a new name based on the last four digits of the customer number. Because it is based on customer number, customers will have the same name during every run through. 
 
 Please note that the original customer data is not modified or deleted. The anonymization process only affects the copies of the data used in the training environment.
 
-*Note*: The order of the first and last names in the list are imporatnt. Each name is indexed from 0 to 100. If the order of the names change, the new customer name will change on subsecrent runs. 
+*Note*: The order of the first and last names in the list are imporatnt. Each name is indexed from 0 to 100. If the order of the names change, the customer name will change on subsequent runs. 
 
 List of first and last name used. 
 
