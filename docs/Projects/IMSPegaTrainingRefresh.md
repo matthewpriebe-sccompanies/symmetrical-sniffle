@@ -18,12 +18,12 @@ The process consists of 5 Glue Jobs.
 
 The 'Gold Copy' MySql tables are preceded with a GC_. The Following are the 'Gold Copy' Tables:
 
-- GC_IMS_AUTH
-- GC_IMS_CUS_EMAIL
-- GC_IMS_CUSTOMER
-- GC_IMS_MASON_CRN
-- GC_IMS_MASON_PREFERENCES
-- GC_IMS_ORDER
+    - GC_IMS_AUTH
+    - GC_IMS_CUS_EMAIL
+    - GC_IMS_CUSTOMER
+    - GC_IMS_MASON_CRN
+    - GC_IMS_MASON_PREFERENCES
+    - GC_IMS_ORDER
 
 ## Automic Jobs
 This process is controlled by two Automic schedules:
