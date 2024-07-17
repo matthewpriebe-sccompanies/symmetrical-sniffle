@@ -17,6 +17,7 @@ The process consists of 5 Glue Jobs.
 |env-CrdTrainingImsCustomerExtract| IMS_CUSTOMER | oframe_prd_s.ims_customer |
 
 The 'Gold Copy' MySql tables are preceded with a GC_. The Following are the 'Gold Copy' Tables:
+
 - GC_IMS_AUTH
 - GC_IMS_CUS_EMAIL
 - GC_IMS_CUSTOMER
