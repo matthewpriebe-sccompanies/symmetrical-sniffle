@@ -1,0 +1,1367 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Prequal/">
+      
+      
+        <link rel="next" href="../FraudService/FraudService/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.29">
+    
+    
+      
+        <title>CreditLimitDecisioning - Credit Team Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.76a95c52.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#creditlimitdecisioning" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Credit Team Docs" class="md-header__button md-logo" aria-label="Credit Team Docs" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Credit Team Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CreditLimitDecisioning
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Welcome to the Credit Team Docs
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../CobolPrograms/IMSPrograms/" class="md-tabs__link">
+          
+  
+  CobolPrograms
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../CatchLabelProcess/" class="md-tabs__link">
+          
+  
+  Programs
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Credit Team Docs" class="md-nav__button md-logo" aria-label="Credit Team Docs" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Credit Team Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to the Credit Team Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CobolPrograms
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            CobolPrograms
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CobolPrograms/IMSPrograms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IMS Programs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CobolPrograms/OnlinePrograms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Online Programs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Programs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Programs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CatchLabelProcess/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Catch Label Process
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DailyCreditQueueCounts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Daily Credit Queue Counts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IMSACHDownPayment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IMS ACH DownPayment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IMSPegaTrainingRefresh/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IMS Pega Training Data Refresh
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OrderHook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OrderHook
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Prequal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prequal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    CreditLimitDecisioning
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    CreditLimitDecisioning
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lambda-function-process-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lambda Function Process Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audits-and-mysql-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Audits and MySql Tables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-queries-table-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQL Queries - Table Creation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL Queries - Table Creation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crd_credit_limit_blaze_data-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      CRD_CREDIT_LIMIT_BLAZE_DATA Table
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crd_credit_limit_blaze_response-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      CRD_CREDIT_LIMIT_BLAZE_RESPONSE Table
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restart-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restart Procedure
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FraudService
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            FraudService
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FraudService/FraudService/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FraudService/FraudServiceMSI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FraudServiceMSI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FraudService/GoodOrderCheck/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GoodOrderCheck
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FraudService/Kount/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kount
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FraudService/Sift/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sift
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lambda-function-process-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lambda Function Process Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audits-and-mysql-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Audits and MySql Tables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-queries-table-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQL Queries - Table Creation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL Queries - Table Creation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crd_credit_limit_blaze_data-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      CRD_CREDIT_LIMIT_BLAZE_DATA Table
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crd_credit_limit_blaze_response-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      CRD_CREDIT_LIMIT_BLAZE_RESPONSE Table
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restart-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restart Procedure
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="creditlimitdecisioning">CreditLimitDecisioning</h1>
+<h2 id="overview">Overview</h2>
+<p>The credit limit decisioning process determines if a customer's credit limit can be increased. The entire process is controlled with an Automic schedule called <font color="#51c84d"><strong>CREDIT_BLAZE_LIMITS</strong></font>. It starts by kicking off a series of data warehouse jobs. These jobs compile relevant customer data into a Redshift table called <font color="#c84d51"><strong>tempwork.creditlimitrequest</strong></font>.</p>
+<p>Next, an AWS Glue job named <font color="#ac47ca"><strong>{env}-CreditLimitDecisioningGlueJob</strong></font> copies the customer records from the Redshift table into a MySQL table called <font color="red"><strong>CRD_CREDIT_LIMIT_BLAZE_DATA</strong></font>.</p>
+<p>The <strong>Lambda function process</strong> retrieves the customer data from the MySQL table and feeds it into the Blaze rules engine, which contains the logic around credit limits. The output of the Blaze rules engine is saved into the <font color="red"><strong>CRD_CREDIT_LIMIT_BLAZE_RESPONSES</strong></font> Table.</p>
+<p>Finally, these blaze response records are picked up by <strong>COP381US</strong>. This COBOL program creates an input file for the normal <strong>COP381</strong> program, which will pick up the file and update the customers credit limits. </p>
+<p><img alt="System Overview" src="../Images/CLDOverview1.PNG" /></p>
+<h2 id="lambda-function-process-overview"><strong>Lambda Function Process Overview</strong></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>dev</strong></th>
+<th><strong>uat</strong></th>
+<th><strong>prd</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lambda 1</strong></td>
+<td>dev-CreditLimitDecisioningPushRecords</td>
+<td>uat-CreditLimitDecisioningPushRecords</td>
+<td>prd-CreditLimitDecisioningPushRecords</td>
+</tr>
+<tr>
+<td><strong>Lambda 2</strong></td>
+<td>dev-CreditLimitDecisioning</td>
+<td>uat-CreditLimitDecisioning</td>
+<td>prd-CreditLimitDecisioning</td>
+</tr>
+</tbody>
+</table>
+<p>This process relies on two AWS Lambda functions and an SQS queue to process customer records through Blaze Rules Engine.</p>
+<p>The Automic schedule will spin up nine <font color="orange"><strong>{env}-CreditLimitDecisioningPushRecords</strong></font> Lambda executions. These lambdas, running concurrently, pull data from <font color="red"><strong>CRD_CREDIT_LIMIT_BLAZE_DATA</strong></font> table. Each Lambda is assigned a number from 1 to 9. When invoked, the Lambdas will only query records where the <font color="#ca4765"><strong>LAMBDA_NUMBER</strong></font> column value matches their assigned number. This strategy allows the large volume of customer records to be divided into manageable batches across each lambda execution. This parallelizes the processing. The <font color="orange"><strong>{env}-CreditLimitDecisioningPushRecords</strong></font> Lambda also checks the  <font color="#ca4765"><strong>PROCESSED_STATUS</strong></font> column. If this column is empty or null, it means the record has not yet been processed. If it contains <strong>'Y'</strong>, the record has already been processed. The loader lambda will only retrieve records not yet processed. After each <font color="orange"><strong>{env}-CreditLimitDecisioningPushRecords</strong></font> Lambda queried it's data subset, it loads that data into an AWS sqs.The data, called messages, are loaded into an SQS queue called <font color="  #4eb8be  "><strong>{env}-CreditLimitDecisioning</strong></font>.</p>
+<p><font color="red"><strong>Important</strong></font>: <em>The loader uses a fire-and-forget system. It does not check the response after sending a request to load messages into the queue. Messages can fail to load. If this occurs, the queue should be purged and the records reloaded.</em></p>
+<p>The queue holds these messages until they are processed. When the trigger is enabled on the <font color="orange"><strong>{env}-CreditLimitDecisioning</strong></font> Lambda function, it will retrieve messages from the queue. These messages include SequenceIdkey numbers. The program takes that unique key and queries the customer data from the <font color="red"><strong>CRD_CREDIT_LIMIT_BLAZE_DATA</strong></font> MySQL table. It then formats that data into an XML SOAP request. Using SOAP, a request is made to the Blaze Server. The program receives an XML response from Blaze, which it reformats and saves into the <font color="red"><strong>CRD_CREDIT_LIMIT_BLAZE_RESPONSES</strong></font> MySQL table.</p>
+<p>If a message is processed successfully, it is deleted from the queue. If a message fails processing, it goes back to the queue to be reprocessed. If a message continues failing after multiple attempts, it is sent to the <font color="  #4eb8be  "><strong>{env}-CreditLimitDecisioningDeadLetter</strong></font> queue. In the deadletter queue, failed messages sit until purged. Developers can pull records from the deadletter queue through the AWS console to investigate why the messages failed.</p>
+<p>The <font color="orange"><strong>{env}-CreditLimitDecisioning</strong></font> Lambda function that processes messages from the SQS queue can scale up dynamically based on demand. The maximum concurrency (max number of simultaneous Lambda executions) is configured in Terraform. </p>
+<p>This allows the processing capacity to increase exponentially. When the Lambda is triggered, it will launch up to the max concurrent executions if needed, each of which retrieves messages from the queue in batches and processes them. For example if the Max Concurrency is set to 75, a max of 75 lambda executions will work in parallel to process messages in the queue. </p>
+<p>The batching window, batch size, and other parameters that control the throughput and parallelism of the Lambdas are also configurable in the Terraform resource block. For example:</p>
+<pre><code class="language-terraform">resource &quot;aws_lambda_event_source_mapping&quot; &quot;sqstrigger-east1&quot; {
+  provider          = aws.east1
+  event_source_arn  = aws_sqs_queue.main-queue-east1.arn
+  function_name     = module.lambda_alias-east1-main.lambda_alias_arn
+  function_response_types = [&quot;ReportBatchItemFailures&quot;]
+  maximum_batching_window_in_seconds = 300
+  batch_size = 1000
+  scaling_config {
+    maximum_concurrency = 75
+  }
+  depends_on = [
+    aws_sqs_queue.main-queue-east1,
+    module.lambda_alias-east1-main
+  ]
+}
+</code></pre>
+<p>The following terraform resource block configures the number of times that a message can be retried and the visibility timeout for each message. </p>
+<pre><code class="language-terraform">resource &quot;aws_sqs_queue&quot; &quot;main-queue-east1&quot; {
+    provider = aws.east1
+    visibility_timeout_seconds = 900
+    name = &quot;${local.env}-${var.lambdaname_main}&quot;
+    redrive_policy = jsonencode({
+    deadLetterTargetArn = aws_sqs_queue.dead-letter-east1.arn
+    maxReceiveCount     = 3
+  })
+}
+</code></pre>
+<p>Both the request and response, along with the raw XML request and response, are saved in Redshift.</p>
+<h2 id="audits-and-mysql-tables">Audits and MySql Tables</h2>
+<p>Redshift Tables</p>
+<table>
+<thead>
+<tr>
+<th><strong>Table</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tempwork.creditlimitrequest</td>
+<td>Redshift</td>
+<td>data is initially loaded here</td>
+</tr>
+<tr>
+<td>creditlimitdecisioning_dev_s.creditlimitdecisioningblazerequesta</td>
+<td>Redshift</td>
+<td>blaze request audit</td>
+</tr>
+<tr>
+<td>creditlimitdecisioning_dev_s.creditlimitdecisioningxmlblazerequest</td>
+<td>Redshift</td>
+<td>raw xml request audit</td>
+</tr>
+<tr>
+<td>creditlimitdecisioning_dev_s.creditlimitdecisioningblazeresponse</td>
+<td>Redshift</td>
+<td>blaze response audit</td>
+</tr>
+<tr>
+<td>creditlimitdecisioning_dev_s.creditlimitdecisioningxmlblazeresponse</td>
+<td>Redshift</td>
+<td>raw xml response audit</td>
+</tr>
+<tr>
+<td>CRD_CREDIT_LIMIT_BLAZE_DATA</td>
+<td>MySql</td>
+<td>copied from tempwork.creditlimitrequest</td>
+</tr>
+<tr>
+<td>CRD_CREDIT_LIMIT_BLAZE_RESPONSES</td>
+<td>MySql</td>
+<td>stores response from blaze</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Redshift Audits</strong></p>
+<p>Audit data is captured by the program and sent to an S3 bucket named <font color=" #09ca6b "><strong>{env}-creditlimitdecisioning-colonybrands-east1</strong></font> using Kinesis Firehose. The data is in JSON format. Kinesis automatically merges individual JSON audits into larger single JSON files.</p>
+<p>After the JSON files are saved in S3, a Glue crawler called <font color="  #5791ba  "><strong>{env}_CreditLimitDecisioning</strong></font> runs and picks up any new files. These files are then added to a Glue catalog database table and loaded into Redshift.</p>
+<p><font color="red"><strong>Note</strong></font>: The crawler must run to get new audits into Redshift. The crawler runs at the end of the automatic schedule to pick up new audit files, but can also be triggered manually.</p>
+<h2 id="sql-queries-table-creation"><strong>SQL Queries - Table Creation</strong></h2>
+<p>The following SQS queries will create both the needed MySQL tables to make the program work.</p>
+<h3 id="crd_credit_limit_blaze_data-table">CRD_CREDIT_LIMIT_BLAZE_DATA Table</h3>
+<pre><code class="language-sql">CREATE TABLE `CRD_CREDIT_LIMIT_BLAZE_DATA` (
+  `SEQUENCE_ID_KEY` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `ACCOUNT_NUMBER` varchar(9) NOT NULL,
+  `COMPANY_CODE` varchar(2) NOT NULL,
+  `PROCESSED_STATUS` varchar(10) DEFAULT NULL,
+  `TEST_CODE` varchar(5) DEFAULT NULL,
+  `LAMBDA_NUMBER` int(9) NOT NULL,
+  `ADD_TIMESTAMP` datetime DEFAULT CURRENT_TIMESTAMP,
+  `UPDATE_TIMESTAMP` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `LIFE_PAYMENT_AMT_CMP` decimal(9,2) DEFAULT '0.00',
+  `LIFE_NSF_CHECK_AMT_CMP` decimal(9,2) DEFAULT '0.00',
+  `MAX_BALANCE_CMP` decimal(9,2) DEFAULT '0.00',
+  `LAST_CMP_PAYMENT_DATE` varchar(10) DEFAULT 'T',
+  `MAX_TRANSACTION_DATE_CMP` varchar(10) DEFAULT 'T',
+  `PAST_DUE_DAYS_AFTER_CMP` int(9) DEFAULT '0',
+  `BALANCE_AMT_CMP` decimal(9,2) DEFAULT '0.00',
+  `MAX_PD_STATUS_L3M_CMP` varchar(1) DEFAULT 'T',
+  `MAX_PD_STATUS_L4M_CMP` varchar(1) DEFAULT 'T',
+  `LAST_CLOSING_DATE_CMP` varchar(10) DEFAULT 'T',
+  `LIFE_TOTAL_PAID_AMT_CMP` decimal(9,2) DEFAULT '0.00',
+  `LIFE_PD_COUNT_CMP` int(9) DEFAULT '0',
+  `LIFE_CLOSING_COUNT_CMP` int(9) DEFAULT '0',
+  `WORST_PAST_DUE_STATUS_CMP` varchar(1) DEFAULT 'T',
+  `LIFE_NSF_COUNT_CMP` int(9) DEFAULT '0',
+  `LIFE_SALES_CMP` decimal(9,2) DEFAULT '0.00',
+  `LIFE_ORDERS_CMP` int(9) DEFAULT '0',
+  `SALES_LAST_6M_CMP` decimal(9,2) DEFAULT '0.00',
+  `APPROVED_ORDERS_LAST_6M_CMP` int(9) DEFAULT '0',
+  `HELD_DEMAND_LAST_6M_CMP` decimal(9,2) DEFAULT '0.00',
+  `HELD_ORDERS_LAST_6M_CMP` int(9) DEFAULT '0',
+  `DP_AMOUNT_LAST_6M_CMP` decimal(9,2) DEFAULT '0.00',
+  `DP_ORDERS_LAST_6M_CMP` int(9) DEFAULT '0',
+  `BAD_DEBT_PLACEMENT_DATE_CMP` varchar(10) DEFAULT 'T',
+  `BD_LAST_12M_FLAG` varchar(5) DEFAULT 'T',
+  `CREDIT_LIMIT_CMP` decimal(9,2) DEFAULT '0.00',
+  `CREDIT_LIMIT_SET_DATE` varchar(10) DEFAULT 'T',
+  `CREDIT_LIMIT_EXPIRATION_DATE` varchar(10) DEFAULT 'T',
+  `CREDIT_LIMIT_LOGIC_CODE` varchar(3) DEFAULT 'T',
+  `XCMP_BD_MAILED_CODE` varchar(1) DEFAULT 'T',
+  `INCR_LIMIT_EXPIRATION_DATE` varchar(10) DEFAULT 'T',
+  `INCR_CREDIT_LIMIT` decimal(9,2) DEFAULT '0.00',
+  `NO_CHANGE_TO_LIMIT_FLAG` varchar(5) DEFAULT 'T',
+  `CLOSED_ACCT_FLAG` varchar(5) DEFAULT 'T',
+  `BAD_DEBT_CODE` varchar(1) DEFAULT 'T',
+  `RANDOM_NBR_3` varchar(16) DEFAULT 'T',
+  `AFFILIATE_SHARING_FLAG` varchar(5) DEFAULT 'T',
+  `INCOME_AMT` decimal(9,2) DEFAULT '0.00',
+  `INCOME_DATE` varchar(10) DEFAULT 'T',
+  `CBR_SCORE_4` decimal(3,2) DEFAULT '0.00',
+  `CBR_EXPIRATION_DATE` varchar(10) DEFAULT 'T',
+  `EXPERIAN_RISK_SCORE` int(3) DEFAULT '0',
+  `EXPERIAN_EXPIRATION_DATE` varchar(10) DEFAULT 'T',
+  `EQUIFAX_04_RISK_SCORE` int(3) DEFAULT '0',
+  `EQUIFAX_04_EXPIRATION_DATE` varchar(10) DEFAULT 'T',
+  `EQUIFAX_10_RISK_SCORE` int(3) DEFAULT '0',
+  `EQUIFAX_10_EXPIRATION_DATE` varchar(10) DEFAULT 'T',
+  `CASH_BANK_CARD_SALES_CMP` decimal(9,2) DEFAULT '0.00',
+  `LAST_FOE_DATE_CMP` varchar(10) DEFAULT 'T',
+  `FIRST_FOE_DATE_CMP` varchar(10) DEFAULT 'T',
+  `TRANS_UNION_RISK_SCORE` int(3) DEFAULT '0',
+  `TRANS_UNION_EXPIRATION_DATE` varchar(10) DEFAULT NULL,
+  `CBR_ANNUAL_INCOME` decimal(9,2) DEFAULT '0.00',
+  `CBR_MONTHLY_EXPENSE` decimal(9,2) DEFAULT '0.00',
+  `CREDIT_WORTHINESS_SCORE` int(3) DEFAULT '0',
+  `RISK_SCORE_CODE` varchar(1) DEFAULT 'T',
+  `WORST_PD_NON_BD_COMPANIES` int(6) DEFAULT '0',
+  `BAD_DEBT_COMPANY_COUNT` int(9) DEFAULT '0',
+  `MAX_CORP_FOE_DATE` varchar(10) DEFAULT 'T',
+  `CORP_LIMIT_COUNT` int(9) DEFAULT '0',
+  `DAYS_SINCE_LAST_INCREASE` int(9) DEFAULT '0',
+  `DAYS_SINCE_LAST_FOE_CORP_ORDER` int(9) DEFAULT '0',
+  `DAYS_SINCE_FIRST_FOE_ORDER` int(9) DEFAULT '0',
+  `LAST_CORP_FOE_DATE` varchar(10) DEFAULT 'T',
+  `FIRST_CORP_FOE_DATE` varchar(10) DEFAULT 'T',
+  `LIFE_PAYMENT_AMT_CORP` decimal(9,2) DEFAULT '0.00',
+  `LIFE_NSF_CHECK_AMT_CORP` decimal(9,2) DEFAULT '0.00',
+  `MAX_BALANCE_CORP` decimal(9,2) DEFAULT '0.00',
+  `LAST_REMIT_DATE_CORP` varchar(10) DEFAULT 'T',
+  `MAX_TRANSACTION_DATE_CORP` varchar(10) DEFAULT 'T',
+  `PAST_DUE_DAYS_AFTER_CORP` int(9) DEFAULT '0',
+  `BALANCE_AMT_CORP` decimal(9,2) DEFAULT '0.00',
+  `MAX_PD_STATUS_L3M_CORP` varchar(1) DEFAULT 'T',
+  `MAX_PD_STATUS_L4M_CORP` varchar(1) DEFAULT 'T',
+  `LAST_CLOSING_DATE_CORP` varchar(10) DEFAULT 'T',
+  `LIFE_PD_COUNT_CORP` int(9) DEFAULT '0',
+  `LIFE_CLOSING_COUNT_CORP` int(9) DEFAULT '0',
+  `WORST_PAST_DUE_STATUS_CORP` varchar(5) DEFAULT 'T',
+  `LIFE_NSF_COUNT_CORP` int(9) DEFAULT '0',
+  `LIFE_SALES_CORP` decimal(9,2) DEFAULT '0.00',
+  `LIFE_ORDERS_CORP` int(9) DEFAULT '0',
+  `SALES_LAST_6M_CORP` decimal(9,2) DEFAULT '0.00',
+  `APPROVED_ORDERS_LAST_6M_CORP` int(9) DEFAULT '0',
+  `HELD_DEMAND_LAST_6M_CORP` decimal(9,2) DEFAULT '0.00',
+  `HELD_ORDERS_LAST_6M_CORP` int(9) DEFAULT '0',
+  `DP_AMOUNT_LAST_6M_CORP` decimal(9,2) DEFAULT '0.00',
+  `DP_ORDERS_LAST_6M_CORP` int(9) DEFAULT '0',
+  `CASH_BANK_CARD_SALES_CORP` decimal(9,2) DEFAULT '0.00',
+  `BD_LAST_12M_CORP_FLAG` varchar(5) DEFAULT 'T',
+  `CBR_EXP_MINUS_6M` varchar(29) DEFAULT 'T',
+  `EQUIFAX_04_EXP_MINUS_6M` varchar(29) DEFAULT 'T',
+  `EQUIFAX_10_EXP_MINUS_6M` varchar(29) DEFAULT 'T',
+  `EXPERIAN_EXP_MINUS_6M` varchar(29) DEFAULT 'T',
+  `TRANS_UNION_EXP_MINUS_6M` varchar(29) DEFAULT 'T',
+  `TODAY_MINUS_6M` varchar(32) DEFAULT 'T',
+  `CREDIT_LIMIT_TYPE` varchar(6) DEFAULT 'T',
+  `CMP_AR_PAYMENT_TOTAL` decimal(38,2) DEFAULT '0.00',
+  `CORP_AR_PAYMENT_TOTAL` decimal(38,1) DEFAULT '0.0',
+  `RUN_DATE` int(18) DEFAULT '0',
+  PRIMARY KEY (`SEQUENCE_ID_KEY`),
+  UNIQUE KEY `CUST_COMP_KEY` (`ACCOUNT_NUMBER`,`COMPANY_CODE`),
+  KEY `IDX_ADD_TIMESTAMP` (`ADD_TIMESTAMP`),
+  KEY `IDX_TYPE_OF_CREDIT_LIMIT` (`CREDIT_LIMIT_TYPE`),
+  KEY `IDX_PROCESSED_STATUS` (`PROCESSED_STATUS`),
+  KEY `IDX_COMPANY_AND_STATUS` (`COMPANY_CODE`, `PROCESSED_STATUS`)
+) ENGINE=InnoDB AUTO_INCREMENT=10427569 DEFAULT CHARSET=latin1;
+</code></pre>
+<h3 id="crd_credit_limit_blaze_response-table">CRD_CREDIT_LIMIT_BLAZE_RESPONSE Table</h3>
+<pre><code class="language-sql">CREATE TABLE `CRD_CREDIT_LIMIT_BLAZE_RESPONSES` (
+  `SEQUENCE_ID_KEY` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `FK_SEQUENCE_ID_KEY` bigint(20) NOT NULL,
+  `CREDIT_LIMIT_TYPE` char(1) DEFAULT ' ',
+  `UPDATE_FLAG` char(5) DEFAULT '     ',
+  `ACCOUNT_NUMBER` char(9) DEFAULT '         ',
+  `COMPANY_CODE` char(2) DEFAULT '7 ',
+  `ADD_TIMESTAMP` datetime DEFAULT CURRENT_TIMESTAMP,
+  `UPDATE_TIMESTAMP` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `OUTSIDE_RISK_SCORE` int(3) DEFAULT '0',
+  `OUTSIDE_SCORE_RANK` int(3) DEFAULT '0',
+  `OUTSIDE_SCORE_SOURCE` char(5) DEFAULT '     ',
+  `OUTSIDE_SCORE_EXPIRATION_DATE` char(10) DEFAULT '          ',
+  `RISK_PROBABILITY_SCORE` int(3) DEFAULT '0',
+  `RESIDUAL_INCOME_AMT` decimal(9,0) DEFAULT '0',
+  `PERMANENT_LIMIT_FLAG` char(5) DEFAULT '     ',
+  `INCREASE_QUALIFY_FLAG` char(5) DEFAULT NULL,
+  `CREDIT_LIMIT_CAP` decimal(9,2) DEFAULT '0.00',
+  `STEP_AMOUNT` decimal(9,0) DEFAULT '0',
+  `HIGH_BALANCE_FACTOR` int(9) unsigned zerofill DEFAULT '000000000',
+  `STARTING_CREDIT_LIMIT` decimal(9,0) DEFAULT '0',
+  `NEW_CREDIT_LIMIT` decimal(9,0) DEFAULT '0',
+  `NEW_LIMIT_EXPIRATION_DATE` char(10) DEFAULT '          ',
+  `NEW_LIMIT_SET_DATE` char(10) DEFAULT '          ',
+  `NEW_LOGIC_CODE` decimal(3,0) DEFAULT '0',
+  `CREDIT_LIMIT_RESULT` char(3) DEFAULT '   ',
+  `STEP_CREDIT_LIMIT` decimal(9,0) DEFAULT '0',
+  `COMPANY_TYPE` char(10) DEFAULT '          ',
+  `NEW_MIN_PAYMENT_AMT` decimal(9,2) DEFAULT '0.00',
+  `NEW_XCMP_CREDIT_LIMIT` decimal(9,0) DEFAULT '0',
+  `XCMP_LOGIC_CODE` decimal(3,0) DEFAULT '0',
+  `WITHIN_CMP_LOGIC_CODE` decimal(3,0) DEFAULT '0',
+  `PAYMENT_AFTER_SET_DATE_FLAG` char(5) DEFAULT '     ',
+  `CUSTOMER_TYPE` char(10) DEFAULT '          ',
+  `CROSS_COMPANY_TO_SET_FLAG` char(5) DEFAULT ' ',
+  `WITHIN_COMPANY_TO_SET_FLAG` char(5) DEFAULT ' ',
+  `LIMIT_STEP_FLAG` char(5) DEFAULT '     ',
+  `XCMP_EXPIRATION_DATE` char(10) DEFAULT '          ',
+  `EXPIRE_LIMIT_FLAG` char(5) DEFAULT '     ',
+  `INCREASE_ELIGIBLE_FLAG` char(5) DEFAULT '     ',
+  `XCMP_QUALIFY_FLAG` char(45) DEFAULT NULL,
+  `ORIG_INCREASE_QUALIFY_FLAG` char(45) DEFAULT NULL,
+  `HIGH_BALANCE_LIMIT` decimal(9,2) DEFAULT NULL,
+  `MAX_HIGH_BALANCE_FACTOR` decimal(9,2) DEFAULT NULL,
+  `STEPPED_LIMIT` decimal(9,2) DEFAULT NULL,
+  `RELEASE_VERSION` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`SEQUENCE_ID_KEY`),
+  UNIQUE KEY `CUST_COMP_KEY` (`ACCOUNT_NUMBER`,`COMPANY_CODE`),
+  KEY `IDX_ADD_TIMESTAMP` (`ADD_TIMESTAMP`),
+  KEY `IDX_UPDATE_FLAG` (`UPDATE_FLAG`),
+  KEY `IDX_TYPE_OF_CREDIT_LIMIT` (`CREDIT_LIMIT_TYPE`)
+) ENGINE=InnoDB AUTO_INCREMENT=4828953 DEFAULT CHARSET=latin1;
+</code></pre>
+<h2 id="restart-procedure">Restart Procedure</h2>
+<p>Job restarts can be entirely managed in the Automic schedule <font color = "green"><strong>JOBP.CREDIT_BLAZE_LIMITS</strong></font>.</p>
+<p><img alt="System Overview" src="../Images/CLDOverview2.PNG" /></p>
+<p>1: <strong>Glue Job Failure</strong></p>
+<p>If the glue job (step <font color = "green"><strong>GLUEJOB.DATALOAD</strong></font>) fails, this step can be restarted. Any remnants from a partially completed glue job run, or any previous run, will be cleaned up. It will truncate both the <font color="red"><strong>CRD_CREDIT_LIMIT_BLAZE_RESPONSES</strong></font> and <font color="red"><strong>CRD_CREDIT_LIMIT_BLAZE_DATA</strong></font> MySql table before it begins copying over data from the <font color="#ca4765"><strong>tempwork.creditlimitrequest</strong></font> Redshift table. </p>
+<p>2: <strong>Any Other Failure</strong></p>
+<p>If the Glue job (<font color = "green"><strong>GLUEJOB.DATALOAD</strong></font>) was successful, and some step after it failed, the schedule can then be restarted at step <font color = "green"><strong>BASH.PURGE.AND.DISABLE</strong></font>. This step will purge the queue of any old messages and then proceed like normal.  </p>
+<p>The database table <font color="red"><strong>CRD_CREDIT_LIMIT_BLAZE_DATA</strong></font> in the <font color="#ca4765"><strong>PROCESSED_STATUS</strong></font> column keeps track of which records have been processed by the <font color="orange"><strong>{env}-CreditLimitDecisioning</strong></font> lambda and which ones have not. If there is ever an instance where some records looks like they were missed, restarting at step <font color = "green"><strong>BASH.PURGE.AND.DISABLE</strong></font> will pick up the missed records without touching those that have already been processed.</p>
+<p>There's a rare chance that the <font color="orange"><strong>{env}-CreditLimitDecisioning</strong></font> lambda will encounter duplicate customer records and the C# code should automatically handle these correctly. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../Prequal/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Prequal">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Prequal
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../FraudService/FraudService/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>
